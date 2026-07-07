@@ -1,0 +1,44 @@
+# VS Code
+.vscode/
+
+# Node / package managers
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+/dist/
+/build/
+/frontend/dist/
+/backend/dist/
+
+# Prisma / database
+/prisma/dev.db
+/prisma/*.db-journal
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# AL template leftovers
+.alcache/
+.alpackages/
+.snapshots/
+.output/
+*.app
+rad.json
+*.g.xlf
+*.bclicense
+*.flf
+TestResults.xml

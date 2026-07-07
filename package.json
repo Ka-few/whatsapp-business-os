@@ -1,0 +1,10 @@
+{
+  "name": "whatsapp-business-os",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:backend": "node backend/src/app.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build"
+  }
+}

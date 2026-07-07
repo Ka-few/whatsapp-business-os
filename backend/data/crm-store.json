@@ -1,0 +1,81 @@
+{
+  "appointments": [
+    {
+      "id": "apt-1",
+      "phoneNumber": "254700000002",
+      "customerName": "254700000002",
+      "service": "Facial",
+      "stylist": "Amina",
+      "time": "11:30",
+      "status": "confirmed",
+      "revenue": 1500,
+      "createdAt": "2026-07-07T11:29:23.761Z"
+    },
+    {
+      "id": "apt-1",
+      "phoneNumber": "whatsapp:+254750979233",
+      "customerName": "whatsapp:+254750979233",
+      "service": "Haircut",
+      "stylist": "Maya",
+      "time": "11:30",
+      "status": "confirmed",
+      "revenue": 1500,
+      "source": "WhatsApp",
+      "createdAt": "2026-07-07T11:36:04.699Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "name": "Sarah",
+      "phone": "+254700000001",
+      "notes": "Prefers morning visits"
+    },
+    {
+      "id": "cust-2",
+      "name": "Grace",
+      "phone": "+254700000002",
+      "notes": "Loyal client"
+    }
+  ],
+  "services": [
+    {
+      "id": "svc-1",
+      "name": "Haircut",
+      "price": 1500,
+      "duration": "45 min"
+    },
+    {
+      "id": "svc-2",
+      "name": "Facial",
+      "price": 2500,
+      "duration": "60 min"
+    }
+  ],
+  "stylists": [
+    {
+      "id": "sty-1",
+      "name": "Maya",
+      "specialty": "Haircuts & styling"
+    },
+    {
+      "id": "sty-2",
+      "name": "Amina",
+      "specialty": "Facials & skincare"
+    },
+    {
+      "id": "sty-3",
+      "name": "Nia",
+      "specialty": "Coloring & treatments"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-1",
+      "customerName": "Sarah",
+      "amount": 1500,
+      "method": "M-Pesa",
+      "status": "paid"
+    }
+  ]
+}
