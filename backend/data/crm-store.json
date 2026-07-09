@@ -13,8 +13,8 @@
     },
     {
       "id": "apt-1",
-      "phoneNumber": "whatsapp:+254750979233",
-      "customerName": "whatsapp:+254750979233",
+      "phoneNumber": "whatsapp:+254700000003",
+      "customerName": "whatsapp:+254700000003",
       "service": "Haircut",
       "stylist": "Maya",
       "time": "11:30",
@@ -22,6 +22,34 @@
       "revenue": 1500,
       "source": "WhatsApp",
       "createdAt": "2026-07-07T11:36:04.699Z"
+    },
+    {
+      "id": "apt-1783431663534",
+      "phoneNumber": "whatsapp:+254700000003",
+      "customerName": "whatsapp:+254700000003",
+      "service": "Haircut",
+      "stylist": "Maya",
+      "time": "14:00",
+      "status": "confirmed",
+      "paymentMethod": "M-Pesa",
+      "paymentStatus": "paid",
+      "revenue": 1500,
+      "source": "WhatsApp",
+      "createdAt": "2026-07-07T13:41:03.534Z"
+    },
+    {
+      "id": "apt-1783431775630",
+      "phoneNumber": "whatsapp:+254750979233",
+      "customerName": "whatsapp:+254750979233",
+      "service": "Massage",
+      "stylist": "Amina",
+      "time": "11:30",
+      "status": "confirmed",
+      "paymentMethod": "Cash",
+      "paymentStatus": "pending",
+      "revenue": 3000,
+      "source": "WhatsApp",
+      "createdAt": "2026-07-07T13:42:55.630Z"
     }
   ],
   "customers": [
@@ -50,6 +78,24 @@
       "name": "Facial",
       "price": 2500,
       "duration": "60 min"
+    },
+    {
+      "id": "svc-3",
+      "name": "Pedicure",
+      "price": 1800,
+      "duration": "50 min"
+    },
+    {
+      "id": "svc-4",
+      "name": "Massage",
+      "price": 3000,
+      "duration": "60 min"
+    },
+    {
+      "id": "svc-5",
+      "name": "Hair Coloring",
+      "price": 4500,
+      "duration": "120 min"
     }
   ],
   "stylists": [
@@ -76,6 +122,27 @@
       "amount": 1500,
       "method": "M-Pesa",
       "status": "paid"
+    },
+    {
+      "id": "pay-1783431663534",
+      "appointmentId": "apt-1783431663534",
+      "customerName": "whatsapp:+254700000003",
+      "phoneNumber": "whatsapp:+254700000003",
+      "amount": 1500,
+      "method": "M-Pesa",
+      "status": "paid",
+      "createdAt": "2026-07-07T13:41:03.534Z",
+      "paidAt": "2026-07-07T13:41:24.679Z"
+    },
+    {
+      "id": "pay-1783431775630",
+      "appointmentId": "apt-1783431775630",
+      "customerName": "whatsapp:+254700000003",
+      "phoneNumber": "whatsapp:+254700000003",
+      "amount": 3000,
+      "method": "Cash",
+      "status": "pending",
+      "createdAt": "2026-07-07T13:42:55.630Z"
     }
   ]
 }

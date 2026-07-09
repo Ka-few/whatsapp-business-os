@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "node src/app.js",
-    "dev:backend": "node src/app.js"
+    "dev:backend": "node src/app.js",
+    "test": "node --test --test-concurrency=1"
   },
   "dependencies": {
     "cors": "^2.8.5",

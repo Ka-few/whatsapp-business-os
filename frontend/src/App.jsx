@@ -18,9 +18,16 @@ const collectionSchemas = {
       { key: 'stylist', label: 'Stylist', type: 'text' },
       { key: 'time', label: 'Time', type: 'text' },
       { key: 'status', label: 'Status', type: 'select', options: ['pending', 'confirmed', 'cancelled'] },
+      { key: 'paymentMethod', label: 'Payment method', type: 'select', options: ['Cash', 'M-Pesa', 'Card'] },
+      { key: 'paymentStatus', label: 'Payment status', type: 'select', options: ['pending', 'paid', 'refunded'] },
       { key: 'revenue', label: 'Revenue (KES)', type: 'number' },
     ],
-    renderSummary: (item) => (
+    renderSummary: (item) => {
+      const paymentLabel = item.paymentStatus === 'pending' && item.paymentMethod === 'Cash'
+        ? 'pending (pay when visiting)'
+        : item.paymentStatus || 'pending';
+
+      return (
       <div className="flex-1">
         <div className="flex items-center gap-2">
           <p className="font-medium text-white">{item.customerName || item.phoneNumber || 'Guest'}</p>
@@ -30,9 +37,11 @@ const collectionSchemas = {
         </div>
         <p className="mt-1 text-sm text-slate-400">{item.service || 'Service'} • {item.stylist || 'Stylist'} • {item.time || 'TBD'}</p>
         <p className="mt-1 text-sm text-slate-500">{item.phoneNumber || item.phone || 'No contact yet'} • KES {item.revenue || 0}</p>
+        <p className="mt-1 text-sm text-slate-400">{item.paymentMethod || 'Cash'} payment: {paymentLabel}</p>
         {item.source ? <p className="mt-1 text-xs uppercase tracking-[0.2em] text-pink-300">Source: {item.source}</p> : null}
       </div>
-    ),
+      );
+    },
   },
   customers: {
     title: 'Customers',
@@ -84,7 +93,7 @@ const collectionSchemas = {
     fields: [
       { key: 'customerName', label: 'Customer', type: 'text' },
       { key: 'amount', label: 'Amount (KES)', type: 'number' },
-      { key: 'method', label: 'Method', type: 'text' },
+      { key: 'method', label: 'Method', type: 'select', options: ['Cash', 'M-Pesa', 'Card'] },
       { key: 'status', label: 'Status', type: 'select', options: ['paid', 'pending', 'refunded'] },
     ],
     renderSummary: (item) => (
@@ -99,7 +108,7 @@ const collectionSchemas = {
 function getDefaultValues(collection) {
   switch (collection) {
     case 'appointments':
-      return { customerName: '', service: '', stylist: '', time: '', status: 'pending', revenue: '' };
+      return { customerName: '', service: '', stylist: '', time: '', status: 'pending', paymentMethod: 'Cash', paymentStatus: 'pending', revenue: '' };
     case 'customers':
       return { name: '', phone: '', notes: '' };
     case 'services':
@@ -107,7 +116,7 @@ function getDefaultValues(collection) {
     case 'stylists':
       return { name: '', specialty: '' };
     case 'payments':
-      return { customerName: '', amount: '', method: '', status: 'paid' };
+      return { customerName: '', amount: '', method: 'Cash', status: 'paid' };
     default:
       return {};
   }
@@ -177,7 +186,10 @@ export default function App() {
 
     async function loadStats() {
       try {
-        const summary = await fetchDashboardSummary();
+        const [summary, appointments] = await Promise.all([
+          fetchDashboardSummary(),
+          fetchCollection('appointments'),
+        ]);
         if (!isMounted) return;
 
         setStats([
@@ -186,6 +198,7 @@ export default function App() {
           { label: 'Pending bookings', value: summary.pendingBookings },
           { label: 'New customers', value: summary.newCustomers },
         ]);
+        setItemsByCollection((prev) => ({ ...prev, appointments: appointments || [] }));
       } catch (error) {
         console.error(error);
       } finally {
@@ -380,6 +393,9 @@ export default function App() {
                       <div className="text-sm text-slate-400">
                         <p>{appointment.phoneNumber || appointment.phone || 'No contact yet'}</p>
                         <p className="text-xs uppercase tracking-[0.2em] text-pink-300">{appointment.status || 'pending'}</p>
+                        <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                          {appointment.paymentMethod || 'Cash'}: {appointment.paymentStatus === 'pending' && appointment.paymentMethod === 'Cash' ? 'pending pay on visit' : appointment.paymentStatus || 'pending'}
+                        </p>
                         {appointment.source ? <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{appointment.source}</p> : null}
                       </div>
                     </li>

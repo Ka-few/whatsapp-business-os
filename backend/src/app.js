@@ -11,7 +11,7 @@ const authRoutes = require('./routes/auth');
 const whatsappRoutes = require('./routes/whatsapp');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = Number(String(process.env.PORT || 4000).trim());
 
 app.use(helmet());
 app.use(cors());

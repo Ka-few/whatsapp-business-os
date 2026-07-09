@@ -11,6 +11,9 @@ const defaultState = {
   services: [
     { id: 'svc-1', name: 'Haircut', price: 1500, duration: '45 min' },
     { id: 'svc-2', name: 'Facial', price: 2500, duration: '60 min' },
+    { id: 'svc-3', name: 'Pedicure', price: 1800, duration: '50 min' },
+    { id: 'svc-4', name: 'Massage', price: 3000, duration: '60 min' },
+    { id: 'svc-5', name: 'Hair Coloring', price: 4500, duration: '120 min' },
   ],
   stylists: [
     { id: 'sty-1', name: 'Maya', specialty: 'Haircuts & styling' },
