@@ -6,5 +6,11 @@
     "dev:backend": "node backend/src/app.js",
     "dev:frontend": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
   }
 }
