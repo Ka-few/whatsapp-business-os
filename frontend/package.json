@@ -8,7 +8,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@apollo/client": "^4.2.7",
+    "@apollo/client": "^3.14.1",
     "graphql": "^16.14.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

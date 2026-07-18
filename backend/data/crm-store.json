@@ -1,43 +1,6 @@
 {
   "appointments": [
     {
-      "id": "apt-1",
-      "phoneNumber": "254700000002",
-      "customerName": "254700000002",
-      "service": "Facial",
-      "stylist": "Amina",
-      "time": "11:30",
-      "status": "confirmed",
-      "revenue": 1500,
-      "createdAt": "2026-07-07T11:29:23.761Z"
-    },
-    {
-      "id": "apt-1",
-      "phoneNumber": "whatsapp:+254700000003",
-      "customerName": "whatsapp:+254700000003",
-      "service": "Haircut",
-      "stylist": "Maya",
-      "time": "11:30",
-      "status": "confirmed",
-      "revenue": 1500,
-      "source": "WhatsApp",
-      "createdAt": "2026-07-07T11:36:04.699Z"
-    },
-    {
-      "id": "apt-1783431663534",
-      "phoneNumber": "whatsapp:+254700000003",
-      "customerName": "whatsapp:+254700000003",
-      "service": "Haircut",
-      "stylist": "Maya",
-      "time": "14:00",
-      "status": "confirmed",
-      "paymentMethod": "M-Pesa",
-      "paymentStatus": "paid",
-      "revenue": 1500,
-      "source": "WhatsApp",
-      "createdAt": "2026-07-07T13:41:03.534Z"
-    },
-    {
       "id": "apt-1783431775630",
       "phoneNumber": "whatsapp:+254750979233",
       "customerName": "whatsapp:+254750979233",
@@ -50,6 +13,20 @@
       "revenue": 3000,
       "source": "WhatsApp",
       "createdAt": "2026-07-07T13:42:55.630Z"
+    },
+    {
+      "id": "apt-1784264693858",
+      "phoneNumber": "whatsapp:+254750979233",
+      "customerName": "whatsapp:+254750979233",
+      "service": "Haircut",
+      "stylist": "Maya",
+      "time": "14:00",
+      "status": "confirmed",
+      "paymentMethod": "Cash",
+      "paymentStatus": "pending",
+      "revenue": 1500,
+      "source": "WhatsApp",
+      "createdAt": "2026-07-17T05:04:53.858Z"
     }
   ],
   "customers": [
@@ -143,6 +120,16 @@
       "method": "Cash",
       "status": "pending",
       "createdAt": "2026-07-07T13:42:55.630Z"
+    },
+    {
+      "id": "pay-1784264693858",
+      "appointmentId": "apt-1784264693858",
+      "customerName": "whatsapp:+254750979233",
+      "phoneNumber": "whatsapp:+254750979233",
+      "amount": 1500,
+      "method": "Cash",
+      "status": "pending",
+      "createdAt": "2026-07-17T05:04:53.858Z"
     }
   ]
 }
