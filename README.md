@@ -20,6 +20,7 @@ A **WhatsApp-first CRM platform** for beauty salons and barbershops — enabling
 | **Dashboard** | Salon overview — today's appointments, revenue, and quick stats |
 | **Auth** | JWT-based login with role-based access scoped to a business |
 | **Multi-tenant** | Every model is scoped to a `Business`, making it SaaS-ready |
+| **GraphQL API** | Dedicated Apollo Server endpoint specifically for the React admin dashboard |
 
 ---
 
@@ -27,11 +28,13 @@ A **WhatsApp-first CRM platform** for beauty salons and barbershops — enabling
 
 ### Frontend
 - **React 18** (Vite)
+- **Apollo Client 3** for GraphQL data fetching
 - **TailwindCSS v3** for styling
 - Plain JS (no TypeScript) — fast, lightweight MVP shell
 
 ### Backend
 - **Node.js** + **Express** (CommonJS)
+- **Apollo Server 4** for GraphQL API
 - **Prisma ORM** + **PostgreSQL 16** for data persistence
 - **Twilio** SDK for WhatsApp messaging
 - **Helmet** + **express-rate-limit** + **CORS** for security
@@ -209,6 +212,7 @@ All routes are prefixed with `/api/v1`.
 | `PUT` | `/appointments/:id` | ✓ | Update appointment |
 | `DELETE` | `/appointments/:id` | ✓ | Cancel appointment |
 | `POST` | `/whatsapp/webhook` | ✗ | Twilio inbound message handler |
+| `POST` | `/graphql` | ✓ | GraphQL endpoint for Admin Dashboard |
 
 ---
 
